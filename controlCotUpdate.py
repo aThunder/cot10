@@ -20,7 +20,6 @@ class spCOT():
         self.c.execute("CREATE TABLE comboCOT (ID INTEGER PRIMARY KEY,Dataset TEXT,Database TEXT,Name TEXT,Date,OpenInt INTEGER,RptableLong INTEGER,RptableShort INTEGER, "
                   "NonRptableLong INTGER,NonRptableShort INTEGER, UNIQUE (Name,Date))")
 
-
             # db.execute('insert into test(t1, i1) values(?,?)', ('one', 1)) ## sample for format syntax
 
     def populateTables(self):

@@ -9,7 +9,6 @@ class spCOT():
         self.conn = sqlite3.connect('allCot.db')
         self.c = self.conn.cursor()
 
-
     def getData(self):
         openURL = urllib.request.urlopen(self.url)
         readURL = openURL.read()
