@@ -47,7 +47,6 @@ class spCOT():
 
 def main(url,ID_NameKey):
     print('xxxx: ',ID_NameKey)
-    # url = "https://www.quandl.com/api/v3/datasets/CFTC/TIFF_CME_SC_ALL.json"
     a = spCOT(url,ID_NameKey)
     a.getData()
     a.populateSQL()
@@ -55,16 +54,3 @@ def main(url,ID_NameKey):
 
 if __name__ == '__main__': main(url,ID_NameKey)
 
-##########
-
-# "dataset_code":"US_F_ALL","database_code":
-# "CFTC","name":"Commitment of Trades - U.S. Treasury Bonds - Futures Only","description":
-# "Commitment of Traders data for U.S. Treasury Bonds"
-
-# 'column_names': ['Date', 'Open Interest', 'Dealer Long Positions', 'Dealer Short Positions',
-        #                  'Dealer Spread Positions', 'Asset Mgr LongPositions', 'Asset Mgr Short Positions',
-        #                  'Asset Mgr Spread Positions', 'Lev Money Long Positions', 'Lev Money Short Positions',
-        #                  'Lev Money Spread Positions', 'Other Reportable Long Positions',
-        #                  'Other Reportable Short Positions', 'Other Reportable Spread Positions',
-        #                  'Total Reportable Long Positions', 'Total Reportable Short Positions',
-        #                  'Non-Reportable Long Positions', 'Non-Reportable Reportable Positions']

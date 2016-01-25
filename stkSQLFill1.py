@@ -11,7 +11,6 @@ class Csv2SQL():
 
         self.conn = sqlite3.connect('allCOT.db')
         self.c=self.conn.cursor()
-        # self.keyFiller = 1
 
     def createTables(self):
 
@@ -29,6 +28,7 @@ class Csv2SQL():
 
     def populateTables(self):
         for i in self.symbol:
+            print("i: ",i)
             rowNumber=0
             with open('{0} ohlc.csv'.format(i), newline='') as csvfile:
               reader = csv.reader(csvfile, delimiter=',', quotechar='|')
@@ -39,6 +39,7 @@ class Csv2SQL():
                   self.c.execute("INSERT OR IGNORE INTO SPXBONDGOLD (ID_NameKey,symbol, date,"
                                  "open,high ,low ,close ,vol ,adjclose ) VALUES (?,?,?,?,?,?,?,?,?)",
                                  (self.ID_NameKey,i,row[0],row[1],row[2],row[3],row[4],row[5],row[6]))
+                  # print(i, "UPDATED")
 
 
                   # self.c.execute("REPLACE INTO StxData2 (keynumber, symbol, date,open,high ,low ,close ,vol ,adjclose ) VALUES (?,?,?,?,?,?,?,?,?)", (self.keyFiller,i,row[0],row[1],row[2],row[3],row[4],row[5],row[6]))
@@ -48,9 +49,6 @@ class Csv2SQL():
 
               # print('SQL Table Updated')
 
-              # cursor3 = conn.execute("SELECT date, close from Stock"+ i + " ORDER BY date")
-              # for row in cursor3:
-              #     print(row)
         roww = self.c.lastrowid
         print(roww)
 
@@ -62,7 +60,7 @@ class Csv2SQL():
         # self.c.execute(select count(*) from <stxTable1> where ..
 
 
-def start(symbols,createOrUpdate,ID_NameKey):
+def main(symbols,createOrUpdate,ID_NameKey):
     print(symbols)
     # chooseTable = input("Add to existing Table ('a') or create new Table ('c')?: ")
     a = Csv2SQL(symbols,ID_NameKey)
@@ -76,4 +74,13 @@ def start(symbols,createOrUpdate,ID_NameKey):
         start(symbols)
     d = a.printMessage(createOrUpdate)
 
-start(['SPY'], 'c',1)
+# start(['SPY'], 'c',1)
+# start(['GLD'], 'e',2)
+# start(['IEF'], 'e',3)
+# start(['TLH'], 'e',4)
+
+if __name__ == '__main__': main(['SPY'], 'c',1)
+if __name__ == '__main__': main(['GLD'], 'e',2)
+if __name__ == '__main__': main(['IEF'], 'e',3)
+if __name__ == '__main__': main(['TLH'], 'e',4)
+if __name__ == '__main__': main(['USO'], 'e',5)

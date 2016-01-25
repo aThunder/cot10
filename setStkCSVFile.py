@@ -89,3 +89,7 @@ def chooseAction(symbol,choice1a,startDate1,endDate1,actionSelected):
 
 
 chooseAction('spy', 'n','20150101','20160127','actionSelected')
+chooseAction('gld', 'n','20150101','20160127','actionSelected')
+chooseAction('ief', 'n','20150101','20160127','actionSelected')
+chooseAction('tlh', 'n','20150101','20160127','actionSelected')
+chooseAction('uso', 'n','20150101','20160127','actionSelected')

@@ -27,6 +27,9 @@ class BuildCot():
         stocks = Type1CotFormat.main("https://www.quandl.com/api/v3/datasets/CFTC/TIFF_CME_SC_ALL.json", 1)
         bonds = Type1CotFormat.main("https://www.quandl.com/api/v3/datasets/CFTC/US_F_ALL.json",2)
         gold = Type2CotFormat.main("https://www.quandl.com/api/v3/datasets/CFTC/GC_F_ALL.json",3)
+        oil = Type2CotFormat.main("https://www.quandl.com/api/v3/datasets/CFTC/CL_F_ALL.json",4)
+
+
 
 def main():
     a = BuildCot()
@@ -43,9 +46,6 @@ def main():
         else:
             print("No new table created")
             b = a.populateTables()
-
-
-
 
 
 if __name__ == '__main__': main()
