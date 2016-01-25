@@ -37,7 +37,6 @@ class spCOT():
         plt.title("COT: {0} Net Reportable Position".format(self.criteria))
         plt.show()
 
-
     #         # db.execute('insert into test(t1, i1) values(?,?)', ('one', 1)) ## sample for format syntax
 
 def main():
@@ -49,5 +48,3 @@ def main():
         # c= a.plot1()
 
 if __name__ == '__main__': main()
-
-##########
